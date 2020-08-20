@@ -5,7 +5,7 @@ In this 2D world, the robot can move right, left, up, down or just stay where it
 
 In the final Localization problem in the lesson, we consider a cyclic 4X5 world each grid coloured either Red(R) or Green(G) which is sensed by the robot. The robot can move UP[-1,0], DOWN[1,0], RIGHT[0,1], LEFT[0,-1] or STAY[0,0]. The measurements and the respective motions are mentioned (refer to the code) and also the required probabilities.   
 
-*4X5 Cyclic World*:          
+**4X5 Cyclic World**:          
 ['R','G','G','R','R']        
 ['R','R','G','R','R']         
 ['R','R','G','G','R']               
