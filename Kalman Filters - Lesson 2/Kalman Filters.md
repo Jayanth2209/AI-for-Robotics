@@ -46,14 +46,16 @@ There's a prediction step, where we take the best estimate **X** and multiply it
 * **X' = F.X + U**         
 
 We also have a covariance that characterizes the uncertainity - **P** = Covariance Uncertainity and that is updated as follows:       
-* **P' = F.P.F^(T)**              (F^(T) is the transpose matrix of F)           
+* **P' = F.P.F^(T)**                  
+(F^(T) is the transpose matrix of F)           
 
 For the Measurement update step, we use the measurement **Z** and compare it with our prediction **H.X** (**H** is the measurement function). We call their difference as the error(**Y**): **Y = Z - H.X**     
 This error is mapped into a matrix **S**, which is obtained by projecting the system uncertainity into the measurement space using the measurement function projection. This is added with a matrix **R**, that characterizes the measurement noise. Therefore:       
 * **S = H.P.H^(T) + R**       
 
 This is then mapped into a variable **K**(called the Kalman Gain) as follows:      
-* **K = P.H^(T).S^(-1)**          (S^(-1) is the inverse matrix of S)         
+* **K = P.H^(T).S^(-1)**               
+(S^(-1) is the inverse matrix of S)         
 
 **Then, we finally update our estimate and our uncertainity as follows:** (Phew!!)        
 * **X' = X + K.Y**       
