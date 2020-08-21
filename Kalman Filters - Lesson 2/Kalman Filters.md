@@ -38,5 +38,15 @@ The Kalman Filter States can be classified into - Observables(position/location 
 
 #### Designing a Kalman Filter:     
 To design a Kalman filter, we effectively need two things - for the state, you need a state transition function : State Transition Matrix.(x ẋ) --> (x ẋ). Similarly for measurement, we'll need a measurement function.    
-Example: For the 1D motion we discussed above: **x' = x + ẋ**  and **ẋ' = ẋ**       
-So the State Transition matrix would be - (1 1; 0 1) 
+**Example**: For the 1D motion we discussed above: **x' = x + ẋ**  and **ẋ' = ẋ**       
+So the State Transition matrix would be - **F = (1 1; 0 1)** and for the measurement function matrix, we get **H = (1,0)** i.e., **z = (1,0).(x ẋ)**          
+
+Now, the actual update equations for a Kalman filter are:     
+There's a prediction step, where we take the best estimate **x** and multiply it with the state transition matrix **F** and we the add to it, the motion vector **U**       
+* **x' = F.x + U**         
+
+We also have a covariance that characterizes the uncertainity - **P** = Covariance Uncertainity and that is updated as follows:       
+* **P' = F.P.F^(T)**   (F^(T) is the transpose matrix of F)      
+
+
+
