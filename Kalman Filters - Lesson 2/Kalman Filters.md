@@ -22,7 +22,9 @@ The mean(**μ**) now is represented as a vector with an element with each dimens
 **μ** = (μ0 μ1 .... μD)    
 The variance now is replaced by what is called as covariance(**∑**) which is a matrix with D rows and D columns (dimensionality of the estimate is D). The covariance defines the spread of the gaussian.     
 For example, in 2D we can represent the Gaussian with contour curves as shown in the figure below          
-![](https://github.com/Jayanth2209/AI-for-Robotics/blob/master/Kalman%20Filters%20-%20Lesson%202/Images/Screenshot%20(20).png)      
-Here x0,y0 pair constitute the mean(**μ**) and the spread of the lines corresponds to the covariance(**∑**)     
+![](https://github.com/Jayanth2209/AI-for-Robotics/blob/master/Kalman%20Filters%20-%20Lesson%202/Images/Screenshot%20(20).png)         
+
+Here x0,y0 pair constitute the mean(**μ**) and the spread of the lines corresponds to the covariance(**∑**). When the Gaussian is tilted as in the figure, then the uncertainity of x and y is correlated, which means if I get information about x, you can get the corresponding information about y, by following the contour line. This is called Correlation.       
+
 
 
