@@ -41,12 +41,24 @@ To design a Kalman filter, we effectively need two things - for the state, you n
 **Example**: For the 1D motion we discussed above: **x' = x + ẋ**  and **ẋ' = ẋ**       
 So the State Transition matrix would be - **F = (1 1; 0 1)** and for the measurement function matrix, we get **H = (1,0)** i.e., **z = (1,0).(x ẋ)**          
 
-Now, the actual update equations for a Kalman filter are:     
-There's a prediction step, where we take the best estimate **x** and multiply it with the state transition matrix **F** and we the add to it, the motion vector **U**       
-* **x' = F.x + U**         
+**Now, the actual update equations for a Kalman filter are:**     
+There's a prediction step, where we take the best estimate **X** and multiply it with the state transition matrix **F** and we the add to it, the motion vector **U**       
+* **X' = F.X + U**         
 
 We also have a covariance that characterizes the uncertainity - **P** = Covariance Uncertainity and that is updated as follows:       
-* **P' = F.P.F^(T)**   (F^(T) is the transpose matrix of F)      
+* **P' = F.P.F^(T)**              (F^(T) is the transpose matrix of F)           
+
+For the Measurement update step, we use the measurement **Z** and compare it with our prediction **H.X** (**H** is the measurement function). We call their difference as the error(**Y**): **Y = Z - H.X**     
+This error is mapped into a matrix **S**, which is obtained by projecting the system uncertainity into the measurement space using the measurement function projection. This is added with a matrix **R**, that characterizes the measurement noise. Therefore:       
+* **S = H.P.H^(T) + R**       
+
+This is then mapped into a variable **K**(called the Kalman Gain) as follows:      
+* **K = P.H^(T).S^(-1)**          (S^(-1) is the inverse matrix of S)         
+
+**Then, we finally update our estimate and our uncertainity as follows:** (Phew!!)        
+* **X' = X + K.Y**       
+* **P' = (I - K.H).P**        
+
 
 
 
