@@ -24,7 +24,7 @@ The variance now is replaced by what is called as covariance(**∑**) which is a
 For example, in 2D we can represent the Gaussian with contour curves as shown in the figure below          
 ![](https://github.com/Jayanth2209/AI-for-Robotics/blob/master/Kalman%20Filters%20-%20Lesson%202/Images/Screenshot%20(20).png)         
 
-Here x0,y0 pair constitute the mean(**μ**) and the spread of the lines corresponds to the covariance(**∑**). When the Gaussian is tilted as in the figure, then the uncertainity of x and y is correlated, which means if I get information about x, you can get the corresponding information about y, by following the contour line. This is called Correlation.       
+Here x0,y0 pair constitute the mean(**μ**) and the spread of the lines corresponds to the covariance(**∑**). When the Gaussian is tilted as in the figure, then the uncertainity of x and y is correlated, which means if I get information about x, you can get the corresponding information about y, by following the contour line. This is called Correlation.               
 In the Kalman filter land, we build a 2D-estimate - one for the location(x) -along x axis and one for the velocity(ẋ) - along y axis. So, if initially, we know the location of the object - we represent it as a gaussian around it which is very narrow along x and broad along y(because we are fairly uncertain about the velocity).        
 Now coming to the prediction step, how will we predict the future location without the velocity??...             
 
