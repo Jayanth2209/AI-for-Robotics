@@ -10,3 +10,8 @@ We use Bayes Rule and Total Probability for measurement and motion updates respe
 So, initially we have a prior Gaussian distribution (with a mean μ and variance σ² - which will be higher because we are very uncertain about the location). Now we get a measurement about the vehicle/robot localization (with a mean v and variance r² - which will be smaller because the new measurement told us quite a bit where the vehicle is). Now with this data, we get a subsequent Gaussian with a mean somewhere between prior and the measurement and with a much smaller variance(a narrow peak). This Gaussian, say has a mean μ' and σ'². These values can be given as:     
 * μ' = (r²μ + σ²v)/(r² + σ²)   
 * σ'² = σ²r²/(r²+σ²)      
+So mathematically, we can see that μ' is between μ and v, but closer to v (since we are taking a weighted mean and σ²>r²) and also that σ'² < r² < σ²      
+
+#### Kalman Filter Code: 
+In the lesson, we saw the basic Kalman filter code that outputs the mean and variance of the final Gaussian obtained by measurement and respective motion updates.     
+[Code]() 
