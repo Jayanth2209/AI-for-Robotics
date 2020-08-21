@@ -36,4 +36,7 @@ Now, consider the second measurement, which again tells us only about the positi
 
 The Kalman Filter States can be classified into - Observables(position/location in our example) and Hidden variables(velocity in our example). But because the Observables and the Hidden states interact/correlate, subsequent observations of the observables give us information about the hidden variables. So in layman's terms - as in the previous example - from multiple observations of the posititon of the object, we can estimate how fast it moves. 
 
-
+#### Designing a Kalman Filter:     
+To design a Kalman filter, we effectively need two things - for the state, you need a state transition function : State Transition Matrix.(x ẋ) --> (x ẋ). Similarly for measurement, we'll need a measurement function.    
+Example: For the 1D motion we discussed above: **x' = x + ẋ**  and **ẋ' = ẋ**       
+So the State Transition matrix would be - (1 1; 0 1) 
