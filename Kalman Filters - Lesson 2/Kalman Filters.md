@@ -3,4 +3,10 @@ The Kalman filter technique is one of the popular techniques to estimate the sta
 
 The Kalman filter obtains the location data of a certain moving point(or object) and estimates the future locations and velocities of that point based on this acquired data.    
 In MCL, the probability can be visualized as a histogram with space chopped up into discrete grids. In Kalman filters, this distrubution is a Gaussian Distribution, which is continuous over space. The area under this Gaussian, (obviously) sums up to 1.     
-The 1D Gaussian is characterized by two parameters - the mean(μ) and the width of the Gaussian, also called as the variance(σ²). Variance is the measure of uncertainity. More is the variance, the more uncertain we are about the actual state.
+The 1D Gaussian is characterized by two parameters - the mean(μ) and the width of the Gaussian, also called as the variance(σ²). Variance is the measure of uncertainity. More is the variance, the more uncertain we are about the actual state.      
+
+The Kalman filter iterates two different things - measurement updates and  motion updates (also called prediction). Measurement -> Motion -> Measurement cycle: similar to MCL.    
+We use Bayes Rule and Total Probability for measurement and motion updates respectively.      
+So, initially we have a prior Gaussian distribution (with a mean μ and variance σ² - which will be higher because we are very uncertain about the location). Now we get a measurement about the vehicle/robot localization (with a mean v and variance r² - which will be smaller because the new measurement told us quite a bit where the vehicle is). Now with this data, we get a subsequent Gaussian with a mean somewhere between prior and the measurement and with a much smaller variance(a narrow peak). This Gaussian, say has a mean μ' and σ'². These values can be given as:     
+* μ' = (r²μ + σ²v)/(r² + σ²)   
+* σ'² = σ²r²/(r²+σ²)      
