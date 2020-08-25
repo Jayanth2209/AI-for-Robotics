@@ -1,8 +1,3 @@
-# Fill in the matrices P, F, H, R and I at the bottom
-#
-# This question requires NO CODING, just fill in the 
-# matrices where indicated. Please do not delete or modify
-# any provided code OR comments. Good luck!
 
 from math import *
 
@@ -182,7 +177,7 @@ dt = 0.1
 x = matrix([[initial_xy[0]], [initial_xy[1]], [0.], [0.]]) # initial state (location and velocity)
 u = matrix([[0.], [0.], [0.], [0.]]) # external motion
 
-#### DO NOT MODIFY ANYTHING ABOVE HERE ####
+
 #### fill this in, remember to use the matrix() function!: ####
 
 P = matrix([[0., 0., 0., 0.],
@@ -201,6 +196,5 @@ I = matrix([[1., 0., 0., 0.],
             [0., 0., 1., 0.],
             [0., 0., 0., 1.]]) # 4d identity matrix
 
-###### DO NOT MODIFY ANYTHING HERE #######
 
-filter(x, P)
+filter(x, P) 
