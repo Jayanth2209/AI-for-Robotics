@@ -25,6 +25,8 @@ Now, we do what's called as "Resampling" - randomly drawing N new particles from
 So, we need to implement a method of assigning importance weights and also to implement resampling. After assigning the importance weights, we perform resampling. In resampling, we construct a new set of N particles from the old set. Now, these elements of the newly constructed set are selected randomly. The particle with higher importance weight will be more likely to be selected than that with a lesser importance weight. For example, let's say Pk (k-th particle) has a large importance weight, it is likely to be selected more number of times i.e., the new set of N particles would be more likely to contain more than one Pk. And similarly, if a particle Pj has a very low importance weight, it is very less likely for it to get selected into the new set, and even if it does, it is very less likely that it would get selected more than once.       
 ###### Note: Before resampling, the importance weights are normalized       
 These normalized importance weights will be the probability of the particle,for being picked in the resampling. There is even a really minute chance that the particle with the "highest" probabilty is not even picked in the resampling - but again, this is a very unlikely event, but it isn't impossible.        
-[Refer to the video lectures for explanation on Resampling Wheel](https://classroom.udacity.com/courses/cs373/lessons/48704330/concepts/487480820923)         
+[Refer to the video lectures for explanation on Resampling Wheel](https://classroom.udacity.com/courses/cs373/lessons/48704330/concepts/487480820923)        
+
+[Code]()
 
 
