@@ -3,4 +3,5 @@ Robot is in a world and has to reach a goal position - The robot has to plan a p
 ### Compute Cost:         
 We find the "Optimal" path by computing the total cost that is required in different possible paths and choosing the Least Cost Path. (This doesn't take into account any unexpected obstacles). For example, we can assign costs to each action taken by a robot - A forward movement can be given a cost of 1 unit, whereas turns (right/left) could be given costs as required and then an optimal path could be obtained.          
 Let us consider an example discrete world as shown below:     
-![](Images/World.png)
+![](Images/World.png)       
+**S** is the start position and **G** is the Goal position. The robot can move Up/Down/Left/Right. Now we start expanding out into the adjacent grid cells ([0,0] -> [1,0] & [0,1]). Number of expands we took to check these cells is 2. This is defined as the **g-value**.
